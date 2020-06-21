@@ -2,6 +2,10 @@
 
 @media screen and (min-width: 767px) {
 
+   body{
+      font-family: fantasy !important;
+   }
+   
    .wy-table-responsive table td {
       /* !important prevents the common CSS stylesheets from overriding
          this as on RTD they are loaded after this stylesheet */
