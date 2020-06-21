@@ -1,0 +1,1476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 Command Description &mdash; Test 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme - Copy.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="modules.html" />
+    <link rel="prev" title="ESP-Jumpstart" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: green" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Test
+          
+
+          
+            
+            <img src="_static/BeeFi_Logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1 Command Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#basic-at-commands">2 Basic AT Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">2.1 Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">2.2 Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-test-at">2.2.1 AT - Test AT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ate-configure-echo-of-at-commands">2.2.2 ATE - Configure echo of AT commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-rst-restart-module">2.2.2 AT+RST - Restart module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-gmr-check-version-information">2.2.3 AT+GMR – Check version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-restore-restore-factory-default-setting">2.2.4 AT+RESTORE - Restore factory default setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-uart-cur-current-uart-configuration-not-save-in-flash">2.2.5 AT+UART_CUR - Current UART configuration, not save in Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-uart-def-default-uart-configuration-save-in-flash">2.2.6 AT+UART_DEF - Default UART configuration, save in Flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-sysram-check-the-available-ram-size">2.2.7 AT+SYSRAM - Check the available RAM size</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#wi-fi-at-commands">3 Wi-Fi AT Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview-1">3.1 Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands-1">3.2 Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-cwmode-cur">3.2.1 AT+CWMODE_CUR -</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tcp-ip-at-commands">4 TCP/IP AT Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview-2">4.1 Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands-2">4.2 Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipstatus-get-connection-status">4.2.1 AT+CIPSTATUS - Get Connection Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipdomain-dns-function">4.2.2 AT+CIPDOMAIN - DNS Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipstart-establish-tcp-udp-connection">4.3.3 AT+CIPSTART - Establish TCP/UDP Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipsend-send-data">4.4.4 AT+CIPSEND - Send Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipclose-close-tcp-udp-connection">4.4.5 AT+CIPCLOSE - Close TCP/UDP Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipmux-enable-disable-multiple-connection">4.4.6 AT+CIPMUX - Enable/Disable Multiple Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipserver-create-delete-tcp-server">4.4.7 AT+CIPSERVER - Create/Delete TCP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-servermaxconn-set-max-connection-allowed-by-server">4.4.8 AT+SERVERMAXCONN - Set Max Connection Allowed By Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-cipmode-set-transmission-mode">4.4.9 AT+CIPMODE - Set Transmission Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipd-receive-network-data">4.4.10 +IPD - Receive Network Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Another.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="New Text Document.html">Testing testing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1 Command Description</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/BFQ4004.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p><strong>BFQ4004 AT Instruction</strong></p>
+<p><strong>Version 1.0.0</strong></p>
+<p>Version Notes：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2020/05/12</p></td>
+<td><p>1.0.0</p></td>
+<td><p>Phase-1 AT commands, first draft</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table of Contents</strong></p>
+<p>1 Command Description 1</p>
+<p>2 Basic AT Commands 2</p>
+<p>2.1 Overview 2</p>
+<p>2.2 Commands 2</p>
+<p>2.2.1 AT - Test AT 2</p>
+<p>2.2.2 ATE - Configure echo of AT commands 2</p>
+<p>2.2.2 AT+RST - Restart module 2</p>
+<p>2.2.3 AT+GMR – Check version information 3</p>
+<p>2.2.4 AT+RESTORE - Restore factory default setting 3</p>
+<p>2.2.5 AT+UART_CUR - Current UART configuration, not save in Flash 3</p>
+<p>2.2.6 AT+UART_DEF - Default UART configuration, save in Flash 4</p>
+<p>2.2.7 AT+SYSRAM - Check the available RAM size 5</p>
+<p>3 Wi-Fi AT Commands 5</p>
+<p>3.1 Overview 5</p>
+<p>3.2 Commands 6</p>
+<p>3.2.1 AT+CWMODE_CUR - 6</p>
+<p>4 TCP/IP AT Commands 6</p>
+<p>4.1 Overview 6</p>
+<p>4.2 Commands 6</p>
+<p>4.2.1 AT+CIPSTATUS - Get Connection Status 6</p>
+<p>4.2.2 AT+CIPDOMAIN - DNS Function 7</p>
+<p>4.3.3 AT+CIPSTART - Establish TCP/UDP Connection 7</p>
+<p>4.4.4 AT+CIPSEND - Send Data 8</p>
+<p>4.4.5 AT+CIPCLOSE - Close TCP/UDP Connection 9</p>
+<p>4.4.6 AT+CIPMUX - Enable/Disable Multiple Connection 10</p>
+<p>4.4.7 AT+CIPSERVER - Create/Delete TCP server 10</p>
+<p>4.4.8 AT+SERVERMAXCONN - Set Max Connection Allowed By Server 11</p>
+<p>4.4.9 AT+CIPMODE - Set Transmission Mode 11</p>
+<p>4.4.10 +IPD - Receive Network Data 11</p>
+<div class="section" id="command-description">
+<h1>1 Command Description<a class="headerlink" href="#command-description" title="Permalink to this headline">¶</a></h1>
+<font color="blue">Blue word,</font><p>Some <span class="red">red colored text</span>.</p>
+<p>Some <span class="blue">blue colored text</span>. Not blue anymore.</p>
+<p>Some <span class="big">big text</span>.</p>
+<p>Each command set contains four types of AT commands：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 21%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>format</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Test Command</p></td>
+<td><p>AT+&lt;x&gt;=?</p></td>
+<td><p>Queries the Set Command’s
+internal parameters and their
+range of values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Query Command</p></td>
+<td><p>AT+&lt;x&gt;?</p></td>
+<td><p>Return the current value of
+parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Set Command</p></td>
+<td><p>AT+&lt;x&gt;=&lt;…&gt;</p></td>
+<td><p>Sets the value of user-defined
+parameters in commands,</p>
+<p>and runs these commands.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Execute Command</p></td>
+<td><p>AT+&lt;x&gt;</p></td>
+<td><p>Runs commands with no
+user-defined parameters.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Some <span class="red">red colored text</span> again!</p>
+<p>Notes：</p>
+<ol class="arabic simple">
+<li><p>Not all AT commands support all four variations mentioned above.</p></li>
+<li><p>Square brackets [ ] designate the default value; it is either not
+required or may not appear.</p></li>
+<li><p>String values need to be included in double quotation marks, for
+example: AT+CWSAP=”BFQ756290”,”21030826”, 1,4</p></li>
+<li><p>The default baud rate is 115200</p></li>
+<li><p>AT commands have to be capitalized, and must end with a new line (CR
+LF)</p></li>
+</ol>
+</div>
+<div class="section" id="basic-at-commands">
+<h1>2 Basic AT Commands<a class="headerlink" href="#basic-at-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>2.1 Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>commands</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AT</p></td>
+<td><p>Test AT</p></td>
+</tr>
+<tr class="row-odd"><td><p>ATE</p></td>
+<td><p>Configure echo of AT commands</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+RST</p></td>
+<td><p>Restart module</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+GMR</p></td>
+<td><p>Check version info</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+RESTORE</p></td>
+<td><p>Restore factory default setting</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+UART_CUR</p></td>
+<td><p>Current UART configuration, Not save in Flash</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+UART_DEF</p></td>
+<td><p>Default UART configuration, save in Flash</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+SYSRAM</p></td>
+<td><p>Check the available RAM size</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="commands">
+<h2>2.2 Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-test-at">
+<h3>2.2.1 AT - Test AT<a class="headerlink" href="#at-test-at" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 88%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ate-configure-echo-of-at-commands">
+<h3>2.2.2 ATE - Configure echo of AT commands<a class="headerlink" href="#ate-configure-echo-of-at-commands" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 88%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-rst-restart-module">
+<h3>2.2.2 AT+RST - Restart module<a class="headerlink" href="#at-rst-restart-module" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT+RST</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-gmr-check-version-information">
+<h3>2.2.3 AT+GMR – Check version information<a class="headerlink" href="#at-gmr-check-version-information" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT+GMR</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>&lt;AT version info &gt;</p>
+<p>&lt;SDK version info&gt;</p>
+<p>&lt;compile time&gt;</p>
+<p>OK</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>example</p></td>
+<td><p>AT+GMR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-restore-restore-factory-default-setting">
+<h3>2.2.4 AT+RESTORE - Restore factory default setting<a class="headerlink" href="#at-restore-restore-factory-default-setting" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT+RESTORE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Note</p></td>
+<td><p>The execution of this command will reset all
+parameters saved in flash and restore the factory
+default settings of the module. The chip will be
+restarted when this command is executed。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-uart-cur-current-uart-configuration-not-save-in-flash">
+<h3>2.2.5 AT+UART_CUR - Current UART configuration, not save in Flash<a class="headerlink" href="#at-uart-cur-current-uart-configuration-not-save-in-flash" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Query Command:</p>
+<p>AT+UART_CUR?</p>
+</th>
+<th class="head"><p>Set Command：</p>
+<p>AT+UART
+_CUR=&lt;baudrate&gt;,&lt;databits&gt;
+,&lt;stopbits&gt;,&lt;parity&gt;,&lt;flow
+control&gt;</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+UART
+_CUR:&lt;baudrate&gt;,&lt;databits&gt;</p>
+<p>,&lt;stopbits&gt;,&lt;parity&gt;,&lt;flow
+control&gt;</p>
+<p>OK</p>
+</td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Example</p></td>
+<td><p>AT+UART_CUR?</p></td>
+<td><p>AT+UART_CUR=115200,8,1,0,3</p></td>
+</tr>
+<tr class="row-even"><td><p>Note</p></td>
+<td><p>&lt;baudrate&gt;：UART baud rate</p>
+<p>&lt;databits&gt;：data bits</p>
+<p>5： 5-bit data</p>
+<p>6： 6-bit data</p>
+<p>7： 7-bit data</p>
+<p>8： 8-bit data</p>
+<p>&lt;stopbits&gt;：stop bits</p>
+<p>1： 1-bit stop bit</p>
+<p>2： 1.5-bit stop bit</p>
+<p>3： 2-bit stop bit</p>
+<p>&lt;parity&gt;：parity bit</p>
+<p>0： None</p>
+<p>1： Odd</p>
+<p>2： Even</p>
+<p>&lt;flow control&gt;：flow
+control</p>
+<p>0：disable</p>
+<p>1：enable RTS</p>
+<p>2：enable CTS</p>
+<p>3：enable both RTS and CTS</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-uart-def-default-uart-configuration-save-in-flash">
+<h3>2.2.6 AT+UART_DEF - Default UART configuration, save in Flash<a class="headerlink" href="#at-uart-def-default-uart-configuration-save-in-flash" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Query Command:</p>
+<p>AT+UART_DEF?</p>
+</th>
+<th class="head"><p>Set Command：</p>
+<p>AT+UART
+_DEF=&lt;baudrate&gt;,&lt;databits&gt;
+,&lt;stopbits&gt;,&lt;parity&gt;,&lt;flow
+control&gt;</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+UART
+_DEF:&lt;baudrate&gt;,&lt;databits&gt;</p>
+<p>,&lt;stopbits&gt;,&lt;parity&gt;,&lt;flow
+control&gt;</p>
+<p>OK</p>
+</td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Example</p></td>
+<td><p>AT+UART_DEF?</p></td>
+<td><p>AT+UART_DEF=115200,8,1,0,3</p></td>
+</tr>
+<tr class="row-even"><td><p>Note</p></td>
+<td><p>&lt;baudrate&gt;：UART baud rate</p>
+<p>&lt;databits&gt;：data bits</p>
+<p>5： 5-bit data</p>
+<p>6： 6-bit data</p>
+<p>7： 7-bit data</p>
+<p>8： 8-bit data</p>
+<p>&lt;stopbits&gt;：stop bits</p>
+<p>1： 1-bit stop bit</p>
+<p>2： 1.5-bit stop bit</p>
+<p>3： 2-bit stop bit</p>
+<p>&lt;parity&gt;：parity bit</p>
+<p>0： None</p>
+<p>1： Odd</p>
+<p>2： Even</p>
+<p>&lt;flow control&gt;：flow
+control</p>
+<p>0：disable</p>
+<p>1：enable RTS</p>
+<p>2：enable CTS</p>
+<p>3：enable both RTS and CTS</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-sysram-check-the-available-ram-size">
+<h3>2.2.7 AT+SYSRAM - Check the available RAM size<a class="headerlink" href="#at-sysram-check-the-available-ram-size" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Query Command</p></th>
+<th class="head"><p>AT+SYSRAM?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+SYSRAM:&lt;remain RAM size&gt;</p>
+<p>OK</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Example</p></td>
+<td><p>AT+SYSRAM?</p></td>
+</tr>
+<tr class="row-even"><td><p>Response Example</p></td>
+<td><p>+SYSRAM:30000</p>
+<p>OK</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;remain RAM size&gt;：remain space of RAM, unit: Byte</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="wi-fi-at-commands">
+<h1>3 Wi-Fi AT Commands<a class="headerlink" href="#wi-fi-at-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview-1">
+<span id="id1"></span><h2>3.1 Overview<a class="headerlink" href="#overview-1" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Commands</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AT+CWMODE_CUR</p></td>
+<td><p>Set Wi-Fi mode, configuration not save in Flash.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWMODE_DEF</p></td>
+<td><p>Set Wi-Fi mode, configuration save in Flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWJAP_CUR</p></td>
+<td><p>Connect to an AP, configuration not save in Flash.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWJAP_DEF</p></td>
+<td><p>Connect to an AP, configuration save in Flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWLAPOPT</p></td>
+<td><p>Set the configuration of command AT+CWLAP.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWLAP</p></td>
+<td><p>List available APs.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWQAP</p></td>
+<td><p>Disconnect from an AP.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWSAP_CUR</p></td>
+<td><p>Set softAP configuration, configuration not save
+in flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWSAP_DEF</p></td>
+<td><p>Set softAP configuration, configuration save in
+flash.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWLIF</p></td>
+<td><p>Get stations IP which connect to BFQ4004 softAP.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWDHCP_CUR</p></td>
+<td><p>Enable/disable DHCP, configuration not save in
+Flash.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWDHCP_DEF</p></td>
+<td><p>Enable/disable DHCP, configuration save in Flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWDHCPS_CUR</p></td>
+<td><p>Set IP range of the DHCP server, configuration not
+save in Flash.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CWDHCPS_DEF</p></td>
+<td><p>Set IP range of the DHCP server, configuration
+save in Flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CWAUTOCONN</p></td>
+<td><p>Connect to an AP automatically when power on.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="commands-1">
+<span id="id2"></span><h2>3.2 Commands<a class="headerlink" href="#commands-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-cwmode-cur">
+<h3>3.2.1 AT+CWMODE_CUR -<a class="headerlink" href="#at-cwmode-cur" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="tcp-ip-at-commands">
+<h1>4 TCP/IP AT Commands<a class="headerlink" href="#tcp-ip-at-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview-2">
+<span id="id3"></span><h2>4.1 Overview<a class="headerlink" href="#overview-2" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Commands</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AT+CIPSTATUS</p></td>
+<td><p>Get the connection status.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CIPDOMAIN</p></td>
+<td><p>DNS function.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CIPSTART</p></td>
+<td><p>Establish TCP/UDP/SSL connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CIPSEND</p></td>
+<td><p>Send data.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CIPCLOSE</p></td>
+<td><p>Close TCP/UDP/SSL connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CIFSR</p></td>
+<td><p>Get local IP address.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CIPMUX</p></td>
+<td><p>Enable/disable multiple connections.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CIPSERVER</p></td>
+<td><p>Create/delete tcp server.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CIPSERVERMAXCONN</p></td>
+<td><p>Set max connection allowed by server.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AT+CIPMODE</p></td>
+<td><p>Set transmission mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>AT+CIPSTO</p></td>
+<td><p>Set tcp server timeout</p></td>
+</tr>
+<tr class="row-odd"><td><p>+IPD</p></td>
+<td><p>Receive network data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="commands-2">
+<span id="id4"></span><h2>4.2 Commands<a class="headerlink" href="#commands-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-cipstatus-get-connection-status">
+<h3>4.2.1 AT+CIPSTATUS - Get Connection Status<a class="headerlink" href="#at-cipstatus-get-connection-status" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT+CIPSTATUS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>STATUS:&lt;stat&gt;</p>
+<p>+CIPSTATUS:&lt;link ID&gt;,&lt;type&gt;,&lt;remote IP&gt;,&lt;remote
+port&gt;,&lt;local port&gt;,&lt;tetype&gt;</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;stat&gt;: status of BFQ4004 station interface</p>
+<p>2: BFQ4004 is connected to an AP and it’s IP
+obtained.</p>
+<p>3: BFQ4004 has create a TCP/UDP transmission.</p>
+<p>4: TCP/UDP transmission of BFQ4004 is
+disconnected.</p>
+<p>5: BFQ4004 not connect to an AP.</p>
+<p>&lt;link ID&gt;: ID of connection(0 ~ 4), used for
+multiple connections.</p>
+<p>&lt;type&gt;: string parameter, “TCP” or “UDP”.</p>
+<p>&lt;remote IP&gt;: string, remote IP address.</p>
+<p>&lt;remote IP&gt;: number, remote port.</p>
+<p>&lt;local port&gt;: number, BFQ4004 local port.</p>
+<p>&lt;tetype&gt;:</p>
+<p>0: BFQ4004 run as a client.</p>
+<p>1: BFQ4004 run as a server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipdomain-dns-function">
+<h3>4.2.2 AT+CIPDOMAIN - DNS Function<a class="headerlink" href="#at-cipdomain-dns-function" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
+<th class="head"><p>AT+CIPDOMAIN=&lt;domain name&gt;</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+CIPDOMAIN:&lt;IP address&gt;</p>
+<p>OK</p>
+<p>Or</p>
+<p>DNS Fail</p>
+<p>ERROR</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;domain name&gt;: string, domain name, length must
+be less than 64 bytes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipstart-establish-tcp-udp-connection">
+<h3>4.3.3 AT+CIPSTART - Establish TCP/UDP Connection<a class="headerlink" href="#at-cipstart-establish-tcp-udp-connection" title="Permalink to this headline">¶</a></h3>
+<p><strong>TCP Connection:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set Command</p></th>
+<th class="head"><p>Single TCP
+Connection(AT+CIPMUX=0):</p>
+<p>AT
++CIPSTART=&lt;type&gt;,&lt;remote
+IP&gt;,&lt;remote port&gt;[,&lt;TCP
+keep alive&gt;]</p>
+</th>
+<th class="head"><p>Multiple TCP
+Connection(AT+CIPMUX=1):</p>
+<p>AT+CIPSTART=&lt;link
+ID&gt;,&lt;type&gt;,&lt;remote
+IP&gt;,&lt;remote port&gt;[,&lt;TCP
+keep alive&gt;]</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p>
+<p>Or</p>
+<p>ERROR</p>
+<p>If TCP connection is
+already established, the
+response is:</p>
+<p>ALREADY CONNECTED</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;link ID&gt;: ID of network
+connection (0~4), used
+for multiple
+connections.</p>
+<p>&lt;type&gt;: string parameter
+indicating the
+connection type: “TCP”,
+“UDP” or “SSL”.</p>
+<p>&lt;remote IP&gt;: string
+parameter indicating the
+remote IP address.</p>
+<p>&lt;remote port&gt;: the
+remote port number.</p>
+<p>[&lt;TCP keep alive&gt;]:
+detection time interval
+when TCP is kept alive,
+this function is
+disabled by default.</p>
+<p>0: disable TCP
+keep-alive.</p>
+<p>1 ~ 7200: detection time
+interval, unit: second
+(s).</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Example</p></td>
+<td><p>AT+CIPSTART=”TCP
+“,”192.168.101.110”,1000</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>UDP Connection:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set Command</p></th>
+<th class="head"><p>Single connection
+(AT+CIPMUX=0):</p>
+<p>AT
++CIPSTART=&lt;type&gt;,&lt;remote
+IP&gt;,&lt;remote port&gt;[,(&lt;UDP
+local port&gt;),(&lt;UDP
+mode&gt;)]</p>
+</th>
+<th class="head"><p>Multiple connections
+AT+CIPMUX=1):</p>
+<p>AT+CIPSTART=&lt;link
+ID&gt;,&lt;type&gt;,&lt;remote
+IP&gt;,&lt;remote port&gt;[,(&lt;UDP
+local port&gt;),(&lt;UDP
+mode&gt;)]</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p>
+<p>or</p>
+<p>ERROR</p>
+<p>If the UDP transmission
+is already established,
+the response is:</p>
+<p>ALREADY CONNECTED</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;link ID&gt;: ID of network
+connection (0~4), used
+for multiple
+connections.</p>
+<p>&lt;type&gt;: string parameter
+indicating the
+connection type: “TCP”,
+“UDP” or “SSL”.</p>
+<p>&lt;remote IP&gt;: string
+parameter indicating the
+remote IP address.</p>
+<p>&lt;remote port&gt;: remote
+port number.</p>
+<p>[&lt;UDP local port&gt;]:
+optional; UDP port of
+QCA4004.</p>
+<p>[&lt;UDP mode&gt;]: optional.
+In the UDP transparent
+transmission, the value
+of this parameter has to
+be 0.</p>
+<p>0: the destination peer
+entity of UDP will not
+change, this is the
+default setting.</p>
+<p>1: the destination peer
+entity of UDP can change
+once.</p>
+<p>2: the destination peer
+entity of UDP is allowed
+to change</p>
+<p>To use &lt;UDP mode&gt; , &lt;UDP
+local port&gt; must be set
+first</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Example</p></td>
+<td><p>AT+CIPSTART=”UDP”,”192.
+168.101.110”,1000,1002,2</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipsend-send-data">
+<h3>4.4.4 AT+CIPSEND - Send Data<a class="headerlink" href="#at-cipsend-send-data" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Set Command:</p>
+<p>1. Single connection:
+(+CIPMUX=0)</p>
+<p>AT+CIPSEND=&lt;length&gt;</p>
+<p>2. Multiple connections:
+(+CIPMUX=1)</p>
+<p>AT+CIPSEND=&lt;link
+ID&gt;,&lt;length&gt;</p>
+<p>3. Remote IP and ports can
+be set in UDP</p>
+<p>transmission:</p>
+<p>AT+CIPSEND=[&lt;link
+ID&gt;,]&lt;length&gt; [,&lt;remote</p>
+<p>IP&gt;,&lt;remote port&gt;]</p>
+<p>Function: to configure the
+data length in normal</p>
+<p>transmission mode.</p>
+</th>
+<th class="head"><p>Execute Command:</p>
+<p>AT+CIPSEND</p>
+<p>Function: to start sending
+data in transparent</p>
+<p>transmission mode.</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>Send data of designated
+length.</p>
+<p>Wrap return &gt; after the
+Set Command. Begin</p>
+<p>receiving serial data.
+When data length defined
+by</p>
+<p>&lt;length&gt; is met, the
+transmission of data
+starts.</p>
+<p>If the connection cannot
+be established or gets</p>
+<p>disrupted during data
+transmission, the system</p>
+<p>returns:</p>
+<p>ERROR</p>
+<p>If data is transmitted
+successfully, the system</p>
+<p>returns:</p>
+<p>SEND OK</p>
+<p>If it failed, the system
+returns:</p>
+<p>SEND FAIL</p>
+</td>
+<td><p>Wrap return &gt; after
+executing this command.</p>
+<p>Enter transparent
+transmission, with a 20-ms</p>
+<p>interval between each
+packet, and a maximum of</p>
+<p>2048 bytes per packet.</p>
+<p>When a single packet
+containing +++ is
+received,</p>
+<p>QCA4004 returns to normal
+command mode.</p>
+<p>Please wait for at least
+one second before</p>
+<p>sending the next AT
+command.</p>
+<p>This command can only be
+used in transparent</p>
+<p>transmission mode which
+requires single</p>
+<p>connection.</p>
+<p>For UDP transparent
+transmission, the value of</p>
+<p>&lt;UDP mode&gt; has to be 0
+when using AT+CIPSTART.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;link ID&gt;: ID of the
+connection (0~4), for
+multiple</p>
+<p>connections.</p>
+<ul class="simple">
+<li><p>&lt;length&gt;: data length,</p></li>
+</ul>
+<p>MAX: 2048 bytes.</p>
+<p>[&lt;remote IP&gt;]: remote IP
+can be set in UDP
+transmission.</p>
+<p>[&lt;remote port&gt;]: remote
+port can be set in UDP
+transmission.</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipclose-close-tcp-udp-connection">
+<h3>4.4.5 AT+CIPCLOSE - Close TCP/UDP Connection<a class="headerlink" href="#at-cipclose-close-tcp-udp-connection" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Set Command (used in
+multiple connections):</p>
+<p>AT+CIPCLOSE=&lt;link ID&gt;</p>
+<p>Function: close the
+TCP/UDP Connection.</p>
+</th>
+<th class="head"><p>Execute Command (used in
+multiple</p>
+<p>connections):</p>
+<p>AT+CIPCLOSE</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>&lt;link ID&gt;: ID of the
+connection to be closed.
+When ID</p>
+<p>is 5, all connections will
+be closed. (In server
+mode, the</p>
+<p>ID 5 has no effect.)</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipmux-enable-disable-multiple-connection">
+<h3>4.4.6 AT+CIPMUX - Enable/Disable Multiple Connection<a class="headerlink" href="#at-cipmux-enable-disable-multiple-connection" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Query Command:</p>
+<p>AT+CIPMUX?</p>
+</th>
+<th class="head"><p>Set Command:</p>
+<p>AT+CIPMUX=&lt;mode&gt;</p>
+<p>Function: to set the
+connection type.</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+CIPMUX:&lt;mode&gt;</p>
+<p>OK</p>
+</td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>&lt;mode&gt;:</p>
+<p>0: single connection</p>
+<p>1: multiple connections</p>
+<p>The default mode is
+single connection mode.</p>
+<p>Multiple connections can
+only be set when
+transparent transmission
+is disabled
+(AT+CIPMODE=0).</p>
+<p>This mode can only be
+changed after all
+connections are
+disconnected.</p>
+<p>If the TCP server is
+running, it must be
+deleted (AT+CIPSERVER=0)
+before the single
+connection mode is
+activated.</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipserver-create-delete-tcp-server">
+<h3>4.4.7 AT+CIPSERVER - Create/Delete TCP server<a class="headerlink" href="#at-cipserver-create-delete-tcp-server" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set Command</p></th>
+<th class="head"><p>AT+CIPSERVER=&lt;mode&gt;[,&lt;port&gt;]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>&lt;mode&gt;:</p>
+<p>0: deletes server.</p>
+<p>1: creates server.</p>
+<p>&lt;port&gt;: port number; 333 by default.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Notes</p></td>
+<td><p>A TCP server can only be created when multiple
+connections are activated (AT+CIPMUX=1).</p>
+<p>A server monitor will automatically be created when
+the TCP server is created.</p>
+<p>When a client is connected to the server, it will
+take up one connection and be assigned an ID</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Example</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-servermaxconn-set-max-connection-allowed-by-server">
+<h3>4.4.8 AT+SERVERMAXCONN - Set Max Connection Allowed By Server<a class="headerlink" href="#at-servermaxconn-set-max-connection-allowed-by-server" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Commands</p></th>
+<th class="head"><p>Query Command:</p>
+<p>AT+CIPSERVERMAXCONN?</p>
+<p>Function: obtain the
+maximum number of clients
+allowed to connect to the
+TCP server</p>
+</th>
+<th class="head"><p>Set Command:</p>
+<p>AT+CIPSERVERMAXCONN=&lt;num&gt;</p>
+<p>Function: set the maximum
+number of clients allowed
+to connect to the TCP
+server</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+CIPSERVERMAXCONN:&lt;num&gt;</p>
+<p>OK</p>
+</td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>&lt;num&gt;: the maximum number
+of clients allowed to
+connect to the TCP
+server, range: [1, 5]</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Notes</p></td>
+<td><p>To set this
+configuration, you should
+call the command
+AT+CIPSERVERMAXCONN=&lt;num&gt;
+before creating</p>
+<p>a server.</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-cipmode-set-transmission-mode">
+<h3>4.4.9 AT+CIPMODE - Set Transmission Mode<a class="headerlink" href="#at-cipmode-set-transmission-mode" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Commands</p></th>
+<th class="head"><p>Query Command:</p>
+<p>AT+CIPMODE?</p>
+<p>Function: to obtain
+information about
+transmission mode.</p>
+</th>
+<th class="head"><p>Set Command:</p>
+<p>AT+CIPMODE=&lt;mode&gt;</p>
+<p>Function: to set the
+transmission mode.</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>+CIPMODE:&lt;mode&gt;</p>
+<p>OK</p>
+</td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameters</p></td>
+<td><p>&lt;mode&gt;:</p>
+<p>0: normal transmission
+mode.</p>
+<p>1: UART-Wi-Fi passthrough
+mode (transparent
+transmission), which can
+only be enabled in TCP
+single connection mode or
+in UDP mode when the
+remote IP and port do not
+change.</p>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Notes</p></td>
+<td><p>The configuration changes
+will NOT be saved in
+flash.</p>
+<p>During the UART-Wi-Fi
+passthrough transmission,
+if the TCP connection
+breaks, BFQ4004 will keep
+trying to reconnect until
++++ is input to exit the
+transmission. If it is a
+normal TCP transmission
+and the TCP connection
+breaks, BFQ4004 will give
+a prompt and will not
+attempt to reconnect.</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ipd-receive-network-data">
+<h3>4.4.10 +IPD - Receive Network Data<a class="headerlink" href="#ipd-receive-network-data" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Commands</p></th>
+<th class="head"><p>Single connection:</p>
+<p>(+CIP
+MUX=0)+IPD,&lt;len&gt;[,&lt;remote
+IP&gt;,&lt;remote port&gt;]:&lt;data&gt;</p>
+</th>
+<th class="head"><p>multiple connections:</p>
+<p>(+CIPMUX=1)+IPD,&lt;link
+ID&gt;,&lt;len&gt;[,&lt;remote
+IP&gt;,&lt;remote port&gt;]:&lt;data&gt;</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parameters</p></td>
+<td><p>The command is valid in
+normal command mode. When
+the module receives
+network data, it will
+send the data through the
+serial port using the
++IPD command.</p>
+<p>[&lt;remote IP&gt;]: remote IP,
+enabled by command
+AT+CIPDINFO=1.</p>
+<p>[&lt;remote port&gt;]: remote
+port, enabled by command
+AT+CIPDINFO=1.</p>
+<p>&lt;link ID&gt;: ID number of
+connection.</p>
+<p>&lt;len&gt;: data length.</p>
+<p>&lt;data&gt;: data received</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="section-1"></span></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="ESP-Jumpstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, BeeFi.io
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+    /* Sidebar */
+    .wy-nav-side {
+      background: gray;
+    }
+  </style>
+
+
+</body>
+</html>
