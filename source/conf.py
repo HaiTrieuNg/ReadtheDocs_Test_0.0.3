@@ -67,7 +67,7 @@ html_static_path = ['_static']
 
 html_context = {
     'css_files': [
-        '_static/theme - Copy.css.css',  # override wide tables in RTD theme
+        '_static/theme - Copy.css',  # override wide tables in RTD theme
         ],
      }
 
