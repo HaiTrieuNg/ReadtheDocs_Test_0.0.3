@@ -52,13 +52,9 @@ rst_prolog = """
 .. default-role::
 
 """
+#html_theme = 'sphinx_rtd_theme'
 
-html_style = 'css/theme - Copy.css'
-html_theme = 'sphinx_rtd_theme'
 
-html_theme_options = {
-    'style_nav_header_background': 'green',
-}
 html_logo = 'BeeFi_Logo.png'
 master_doc = 'index'
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -67,7 +63,26 @@ master_doc = 'index'
 html_static_path = ['_static']
 
 
-html_css_files = [
-    'css/theme - Copy.css',
-]
+#html_css_files = [
+#    'css/theme - Copy.css',
+#]
 
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if not on_rtd:  # only import and set the theme if we're building docs locally
+  import sphinx_rtd_theme
+  html_theme = 'sphinx_rtd_theme'
+  html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+  html_style = 'css/theme - Copy.css'
+else:
+  html_context = {
+    'css_files': [
+        'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
+        'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
+        '_static/css/theme - Copy.css',
+    ],
+  }
+
+  html_theme_options = {
+      'style_nav_header_background': 'green',
+  }
