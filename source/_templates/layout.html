@@ -1,2 +1,16 @@
 {% extends "!layout.html" %}
 {% set css_files = css_files + ["_static/theme - Copy.css"] %}
+
+
+  {% block footer %} {{ super() }}
+
+  <style>
+    /* Sidebar */
+    .wy-nav-side {
+      background: gray;
+    }
+    .wy-nav-content {
+    max-width: 90%;
+   }
+  </style>
+{% endblock %}
