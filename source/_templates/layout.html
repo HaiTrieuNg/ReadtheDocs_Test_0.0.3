@@ -21,6 +21,16 @@
       font-family:"Times New Roman";
     }
     
+    .wy-table-responsive table td {
+      /* !important prevents the common CSS stylesheets from overriding
+         this as on RTD they are loaded after this stylesheet */
+      white-space: normal !important;
+   }
+
+   .wy-table-responsive {
+      overflow: visible !important;
+   }
+    
     h1 {
       color: red ;
     }
@@ -42,9 +52,7 @@
     }
 
     
-    .wy-table-responsive table th{
-   	  white-space:normal;
-   }
+   
   
   </style>
 {% endblock %}
