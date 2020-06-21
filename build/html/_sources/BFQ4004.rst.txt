@@ -210,7 +210,12 @@ example         AT+GMR
 | Note            | The execution of this command will reset all      |
 |                 | parameters saved in flash and restore the factory |
 |                 | default settings of the module. The chip will be  |
-|                 | restarted when this command is executed。         |
+|                 | restarted when this command is executed           |
+|                 |   The execution of this command will reset all    |
+|                 | parameters saved in flash and restore the factory |
+|                 | default settings of the module. The chip will be  |
+|                 | restarted when this command is executed           |
+|                 |                                                   |
 +-----------------+---------------------------------------------------+
 
 2.2.5 AT+UART_CUR - Current UART configuration, not save in Flash
