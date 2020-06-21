@@ -52,7 +52,7 @@ rst_prolog = """
 .. default-role::
 
 """
-#html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme'
 
 
 html_logo = 'BeeFi_Logo.png'
@@ -63,7 +63,4 @@ master_doc = 'index'
 html_static_path = ['_static']
 
 
-html_css_files = [
-    'css/theme - Copy.css',
-]
 
