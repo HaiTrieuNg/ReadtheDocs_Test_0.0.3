@@ -3,7 +3,7 @@ html body .rst-content tt,
 html body code {
 	color: #222;
 	background: #eee;
-	font-family: monospace;
+	font-family: arial;
 }
 
 html body .rst-content tt {
