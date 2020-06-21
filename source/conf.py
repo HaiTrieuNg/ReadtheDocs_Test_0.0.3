@@ -52,6 +52,8 @@ rst_prolog = """
 .. default-role::
 
 """
+
+html_style = 'css/theme - Copy.css'
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
