@@ -54,7 +54,9 @@ rst_prolog = """
 """
 html_theme = 'sphinx_rtd_theme'
 
-
+html_theme_options = {
+    'style_nav_header_background': 'green',
+}
 html_logo = 'BeeFi_Logo.png'
 master_doc = 'index'
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -63,4 +65,7 @@ master_doc = 'index'
 html_static_path = ['_static']
 
 
+html_css_files = [
+    'css/theme - Copy.css',
+]
 
