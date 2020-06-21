@@ -1,11 +1,2 @@
 {% extends "!layout.html" %}
-
-  {% block footer %} {{ super() }}
-
-  <style>
-    /* Sidebar */
-    .wy-nav-side {
-      background: gray;
-    }
-  </style>
-{% endblock %}
+{% set css_files = css_files + ["_static/theme - Copy.css"] %}
